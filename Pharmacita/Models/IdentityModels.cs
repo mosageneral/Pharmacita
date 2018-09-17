@@ -49,5 +49,9 @@ namespace Pharmacita.Models
         public System.Data.Entity.DbSet<Pharmacita.Models.Drug> Drugs { get; set; }
 
         public System.Data.Entity.DbSet<Pharmacita.Models.RoleViewModel> RoleViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<Pharmacita.Models.BuyTheDrug> BuyTheDrugs { get; set; }
+
+        
     }
 }

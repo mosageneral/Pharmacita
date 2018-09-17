@@ -28,9 +28,14 @@ namespace Pharmacita.Models
         [Display(Name = "Off ")]
         public decimal  Off { get; set; }
         [Required]
+        [Display(Name = "Price ")]
+        public decimal Price { get; set; }
+        [Required]
         [Display(Name = "Category ")]
         public int categoryId { get; set; }
-        public Category category { get; set; }
+        public string UserId { get; set; }
+        public virtual  Category category { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
 
     }

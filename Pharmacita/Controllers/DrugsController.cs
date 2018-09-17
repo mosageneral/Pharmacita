@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Pharmacita.Models;
 using System.IO;
+using Microsoft.AspNet.Identity;
 
 namespace Pharmacita.Controllers
 {
@@ -56,6 +57,7 @@ namespace Pharmacita.Controllers
                 string path = Path.Combine(Server.MapPath("~/upload"), upload.FileName);
                 upload.SaveAs(path);
                 drug.DrugImage = upload.FileName;
+                drug.UserId = User.Identity.GetUserId();
                 db.Drugs.Add(drug);
                 db.SaveChanges();
                 return RedirectToAction("Index");

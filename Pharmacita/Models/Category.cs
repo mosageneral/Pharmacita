@@ -20,7 +20,7 @@ namespace Pharmacita.Models
         [Required]
         [Display(Name = "Category Content")]
         public string CategoryContent { get; set; }
-        public ICollection <Drug > drugs { get; set; }
+        public virtual  ICollection <Drug > drugs { get; set; }
 
     }
 

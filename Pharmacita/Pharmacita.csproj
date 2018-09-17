@@ -224,8 +224,21 @@
     <Compile Include="Migrations\201809141201087_Role.Designer.cs">
       <DependentUpon>201809141201087_Role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809171140427_Index.cs" />
+    <Compile Include="Migrations\201809171140427_Index.Designer.cs">
+      <DependentUpon>201809171140427_Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809171306259_UserDrug.cs" />
+    <Compile Include="Migrations\201809171306259_UserDrug.Designer.cs">
+      <DependentUpon>201809171306259_UserDrug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809171344491_BuyTheDrug.cs" />
+    <Compile Include="Migrations\201809171344491_BuyTheDrug.Designer.cs">
+      <DependentUpon>201809171344491_BuyTheDrug.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BuyTheDrug.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Drug.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -308,6 +321,8 @@
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Buy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -336,6 +351,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809141201087_Role.resx">
       <DependentUpon>201809141201087_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809171140427_Index.resx">
+      <DependentUpon>201809171140427_Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809171306259_UserDrug.resx">
+      <DependentUpon>201809171306259_UserDrug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809171344491_BuyTheDrug.resx">
+      <DependentUpon>201809171344491_BuyTheDrug.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
