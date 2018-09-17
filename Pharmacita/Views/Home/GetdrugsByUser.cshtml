@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Pharmacita.Models.BuyTheDrug>
+
+@{
+    ViewBag.Title = "GetdrugsByUser";
+}
+
+<h2>GetdrugsByUser</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.drug.DrugName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuyDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.drug.DrugName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyDate)
+        </td>
+        <td>
+         
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

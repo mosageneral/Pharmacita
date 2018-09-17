@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,6 +9,7 @@ namespace Pharmacita.Models
     public class BuyTheDrug
     {
         public int Id { get; set; }
+        [Required]
         public string Message { get; set; }
         public DateTime BuyDate { get; set; }
         public int DrugId { get; set; }

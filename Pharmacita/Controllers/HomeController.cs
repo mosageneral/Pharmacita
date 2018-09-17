@@ -25,12 +25,54 @@ namespace Pharmacita.Controllers
             Session["DrugId"] = drug.Id;
             return View(drug);
         }
-
+        public ActionResult GetDrugsBySeller()
+        {
+            var UserId = User.Identity.GetUserId();
+            var drugs = from app in db.BuyTheDrugs
+                       join Drug in db.Drugs
+                       on app.DrugId equals Drug.Id 
+                       where Drug.User.Id == UserId
+                       select app;
+            return View(drugs.ToList());
+        }
+        public ActionResult GetdrugsByUser()
+        {
+            var UserId = User.Identity.GetUserId();
+            var drugs = db.BuyTheDrugs.Where(a => a.UserId == UserId);
+            return View(drugs.ToList());
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var drug = db.BuyTheDrugs.Find(id);
+            if (drug == null)
+            {
+                return HttpNotFound();
+            }
+            return View(drug);
+        }
+        // POST: Roles/Delete/5
+        [HttpPost]
+        public ActionResult Delete(BuyTheDrug Drug)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+                var mydrug = db.BuyTheDrugs.Find(Drug.Id);
+                db.BuyTheDrugs.Remove(mydrug);
+                db.SaveChanges();
+                return RedirectToAction("GetDrugsByUser");
+            }
+            catch
+            {
+                return View(Drug);
+            }
         }
 
         public ActionResult Contact()

@@ -236,6 +236,10 @@
     <Compile Include="Migrations\201809171344491_BuyTheDrug.Designer.cs">
       <DependentUpon>201809171344491_BuyTheDrug.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809171651368_DrugsByUser.cs" />
+    <Compile Include="Migrations\201809171651368_DrugsByUser.Designer.cs">
+      <DependentUpon>201809171651368_DrugsByUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BuyTheDrug.cs" />
@@ -323,6 +327,10 @@
     <Content Include="Views\Roles\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Buy.cshtml" />
+    <Content Include="Views\Home\GetCarsByUser.cshtml" />
+    <Content Include="Views\Home\GetdrugsByUser.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\GetDrugsBySeller.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -360,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809171344491_BuyTheDrug.resx">
       <DependentUpon>201809171344491_BuyTheDrug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809171651368_DrugsByUser.resx">
+      <DependentUpon>201809171651368_DrugsByUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
