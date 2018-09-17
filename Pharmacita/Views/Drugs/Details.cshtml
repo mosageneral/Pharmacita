@@ -1,0 +1,74 @@
+﻿@model Pharmacita.Models.Drug
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Drug</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugDescribtion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugDescribtion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Expire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Expire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Off)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Off)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
