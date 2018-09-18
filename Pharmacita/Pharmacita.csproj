@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201809171651368_DrugsByUser.Designer.cs">
       <DependentUpon>201809171651368_DrugsByUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809180837075_UserName.cs" />
+    <Compile Include="Migrations\201809180837075_UserName.Designer.cs">
+      <DependentUpon>201809180837075_UserName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BuyTheDrug.cs" />
@@ -266,6 +270,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\JavaScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -371,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809171651368_DrugsByUser.resx">
       <DependentUpon>201809171651368_DrugsByUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809180837075_UserName.resx">
+      <DependentUpon>201809180837075_UserName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

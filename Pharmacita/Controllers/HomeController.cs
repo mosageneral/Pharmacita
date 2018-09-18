@@ -105,6 +105,7 @@ namespace Pharmacita.Controllers
                 db.BuyTheDrugs.Add(drug);
                 db.SaveChanges();
                 ViewBag.Result = "تمت اضافة طلبك";
+                
             }
             else
             {

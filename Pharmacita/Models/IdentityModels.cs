@@ -11,7 +11,7 @@ namespace Pharmacita.Models
     public class ApplicationUser : IdentityUser
     {
      
-        public string FullName { get; set; }
+      
         
       
         public string ProfilePic { get; set; }

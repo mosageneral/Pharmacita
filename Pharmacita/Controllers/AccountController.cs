@@ -76,7 +76,7 @@ namespace Pharmacita.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -155,7 +155,7 @@ namespace Pharmacita.Controllers
                 string path = Path.Combine(Server.MapPath("~/upload"), upload.FileName);
                 upload.SaveAs(path);
                 model.ProfilePic = upload.FileName;
-                var user = new ApplicationUser { UserName = model.FullName, Email = model.Email,Mobile =model .Mobile ,ProfilePic =model .ProfilePic ,Address =model .Address  };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email,Mobile =model .Mobile ,ProfilePic =model .ProfilePic ,Address =model .Address  };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

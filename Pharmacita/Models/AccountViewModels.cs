@@ -49,9 +49,8 @@ namespace Pharmacita.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Full Name")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -67,7 +66,7 @@ namespace Pharmacita.Models
 
         [Required]
         [Display(Name = "Full Name")]
-        public string FullName { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [EmailAddress]
