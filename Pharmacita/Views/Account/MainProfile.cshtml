@@ -1,12 +1,14 @@
 ﻿@model Pharmacita.Models.ApplicationUser
-
+@using Pharmacita.Models
+@using Microsoft.AspNet.Identity
     @{
         ViewBag.Title = "MainProfile";
     }
 
     <h2>MainProfile</h2>
-
-    
+@{
+    var user = User.Identity.GetUserId();
+}
 <br />
 <div class="container">
     <div class="row profile">
@@ -18,22 +20,7 @@
                 </div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
-                <div class="profile-usertitle">
-                    <div class="profile-usertitle-name">
-                        @Html.DisplayFor(model => model.UserName)
-                    </div>
-                    <div class="profile-usertitle-name">
-                    0 @Html.DisplayFor(model => model.Mobile)
-                    </div>
-                    <div class="profile-usertitle-name">
-                        @Html.DisplayFor(model => model.Address)
-                    </div>
-                    <div class="profile-usertitle-name">
-                        @Html.DisplayFor(model => model.Email)
-                    </div>
-                    
-                    
-                </div>
+               
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
@@ -46,10 +33,19 @@
                     <ul class="nav">
                         
                         <li>
-                            <a href="#">
+                            <a href="~/Home/GetDrugsBySeller">
                                 <i class="glyphicon glyphicon-user"></i>
-                                Account Settings
+                                طلبات شراء الادوية الخاصة بك 
                             </a>
+                            <a href="~/Home/GetDrugsByUser">
+                                <i class="glyphicon glyphicon-user"></i>
+                                طلبات الشراء المقدمة من طرفك
+                            </a>
+                            <a href="~/Drugs/Create">
+                                <i class="glyphicon glyphicon-user"></i>
+                                اعرض دواء للبيع
+                            </a>
+                           
                         </li>
                        
                        
@@ -60,7 +56,24 @@
         </div>
         <div class="col-md-9">
             <div class="profile-content">
-                Some user related content goes here...
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        @Html.DisplayFor(model => model.UserName)
+                    </div>
+                    <div class="profile-usertitle-name">
+                        0 @Html.DisplayFor(model => model.Mobile)
+                    </div>
+                    <div class="profile-usertitle-name">
+                        @Html.DisplayFor(model => model.Address)
+                    </div>
+                    <div class="profile-usertitle-name">
+                        @Html.DisplayFor(model => model.Email)
+                    </div>
+                    
+                <div>
+                  
+                </div>
+                </div>
             </div>
         </div>
     </div>

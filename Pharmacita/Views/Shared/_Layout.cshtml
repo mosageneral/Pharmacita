@@ -24,6 +24,13 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li style="padding-left:10px; padding-top :8px">
+                        @using (Html.BeginForm("search", "Home", FormMethod.Post))
+                        {
+                            <input id="searchName" name="searchName" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        }
+                    </li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

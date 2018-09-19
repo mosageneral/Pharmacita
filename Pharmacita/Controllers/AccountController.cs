@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Pharmacita.Models;
 using System.IO;
+using System.Data.Entity;
 
 namespace Pharmacita.Controllers
 {
@@ -28,7 +29,7 @@ namespace Pharmacita.Controllers
             UserManager = userManager;
             SignInManager = signInManager;
         }
-
+        
         public ApplicationSignInManager SignInManager
         {
             get
@@ -175,7 +176,7 @@ namespace Pharmacita.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
+       
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -230,6 +231,34 @@ namespace Pharmacita.Controllers
             ApplicationDbContext db = new ApplicationDbContext();
             var user = db.Users.Find(Id);
            
+            
+            return View(user);
+        }
+        public ActionResult EditMainProfile(string Id)
+
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var user = db.Users.Find(Id);
+
+
+            return View(user);
+        }
+        [HttpPost ]
+        public ActionResult EditMainProfile(ApplicationUser user,HttpPostedFileBase upload)
+        {
+
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            if (ModelState.IsValid)
+            {
+                string path = Path.Combine(Server.MapPath("~/upload"), upload.FileName);
+                upload.SaveAs(path);
+                user.ProfilePic  = upload.FileName;
+                
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index","Home");
+            }
             
             return View(user);
         }

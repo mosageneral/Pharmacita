@@ -249,6 +249,7 @@
     <Compile Include="Models\BuyTheDrug.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Drug.cs" />
+    <Compile Include="Models\DrugViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
@@ -336,6 +337,8 @@
     <Content Include="Views\Home\GetdrugsByUser.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Home\GetDrugsBySeller.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Account\EditMainProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -53,6 +53,5 @@ namespace Pharmacita.Models
 
         public System.Data.Entity.DbSet<Pharmacita.Models.BuyTheDrug> BuyTheDrugs { get; set; }
 
-        
     }
 }

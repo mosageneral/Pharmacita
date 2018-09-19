@@ -33,8 +33,28 @@ namespace Pharmacita.Controllers
                        on app.DrugId equals Drug.Id 
                        where Drug.User.Id == UserId
                        select app;
-            return View(drugs.ToList());
+
+            var groubed = from d in drugs
+                          group d by d.drug.DrugName
+                        into gr
+                          select new DrugViewModel
+                          {
+                              DrugName = gr.Key,
+                              Items = gr
+
+                          };
+            return View(groubed.ToList());
         }
+        public ActionResult Search(string searchName)
+        {
+            var result = db.Drugs.Where(a => a.DrugName .Contains(searchName)
+             || a.DrugDescribtion .Contains(searchName)
+             || a.category .CategoryName .Contains(searchName)
+            ).ToList();
+
+            return View(result);
+        }
+
         public ActionResult GetdrugsByUser()
         {
             var UserId = User.Identity.GetUserId();

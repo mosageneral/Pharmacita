@@ -22,6 +22,7 @@ namespace Pharmacita.Controllers
             var drugs = db.Drugs.Include(d => d.category);
             return View(drugs.ToList());
         }
+      
 
         // GET: Drugs/Details/5
         public ActionResult Details(int? id)
@@ -60,7 +61,8 @@ namespace Pharmacita.Controllers
                 drug.UserId = User.Identity.GetUserId();
                 db.Drugs.Add(drug);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.Ok = "تم تنفيذ طلبك";
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.categoryId = new SelectList(db.Categories, "Id", "CategoryName", drug.categoryId);
@@ -88,13 +90,18 @@ namespace Pharmacita.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,DrugName,DrugDescribtion,Quantity,DrugImage,Expire,Off,categoryId")] Drug drug)
+        public ActionResult Edit(Drug drug, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                string path = Path.Combine(Server.MapPath("~/upload"), upload.FileName);
+                upload.SaveAs(path);
+                drug.DrugImage = upload.FileName;
+                drug.UserId = User.Identity.GetUserId();
                 db.Entry(drug).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.Ok = "تم تنفيذ طلبك";
+               
             }
             ViewBag.categoryId = new SelectList(db.Categories, "Id", "CategoryName", drug.categoryId);
             return View(drug);

@@ -1,51 +1,31 @@
-﻿@model IEnumerable<Pharmacita.Models.BuyTheDrug>
+﻿@model IEnumerable<Pharmacita.Models.DrugViewModel >
 
 @{
     ViewBag.Title = "GetDrugsBySeller";
 }
 
-<h2>GetDrugsBySeller</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.drug.DrugName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.user.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Message)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BuyDate)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.drug.DrugName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.user.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Message)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BuyDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@foreach (var gr in Model)
+{
+    <h1>@gr.DrugName </h1>
+    <table class="table table-bordered table-hover ">
+        <tr>
+            <th>   اسم المشتري </th>
+            <th>  نص الرساله </th>
+            <th> تاريخ الارسال </th>
+        </tr>
+        @foreach (var item in gr.Items)
+        {
+            <tr>
+                <td>
+                @item.user.UserName
+                </td>
+                <td>
+                    @item.Message
+                </td>
+                <td>
+                    @item.BuyDate
+                </td>
+            </tr>
+        }
+    </table>
 }
-
-</table>
