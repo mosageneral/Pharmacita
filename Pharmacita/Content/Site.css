@@ -1,12 +1,23 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+     padding-top: 80px;
     padding-left: 15px;
     padding-right: 15px;
+}
+.navbar-inverse {
+    background-color: #0b3865;
+    border-color: #0b3865;
+    height: 100px;
+    padding: 25px;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #0b3865;
+    background-color: #0b3865;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
