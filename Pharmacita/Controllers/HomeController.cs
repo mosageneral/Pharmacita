@@ -11,10 +11,12 @@ namespace Pharmacita.Controllers
     public class HomeController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
+        [AllowAnonymous ]
         public ActionResult Index()
         {
             return View(db.Categories .ToList ());
         }
+        [Authorize]
         public ActionResult Details(int id)
         {
             var drug = db.Drugs.Find(id);
@@ -25,6 +27,7 @@ namespace Pharmacita.Controllers
             Session["DrugId"] = drug.Id;
             return View(drug);
         }
+        [Authorize ]
         public ActionResult GetDrugsBySeller()
         {
             var UserId = User.Identity.GetUserId();
@@ -45,6 +48,8 @@ namespace Pharmacita.Controllers
                           };
             return View(groubed.ToList());
         }
+
+        [AllowAnonymous ]
         public ActionResult Search(string searchName)
         {
             var result = db.Drugs.Where(a => a.DrugName .Contains(searchName)
@@ -54,7 +59,7 @@ namespace Pharmacita.Controllers
 
             return View(result);
         }
-
+        [Authorize ]
         public ActionResult GetdrugsByUser()
         {
             var UserId = User.Identity.GetUserId();
@@ -67,7 +72,7 @@ namespace Pharmacita.Controllers
 
             return View();
         }
-
+        [Authorize]
         public ActionResult Delete(int id)
         {
             var drug = db.BuyTheDrugs.Find(id);
@@ -78,6 +83,7 @@ namespace Pharmacita.Controllers
             return View(drug);
         }
         // POST: Roles/Delete/5
+        [Authorize]
         [HttpPost]
         public ActionResult Delete(BuyTheDrug Drug)
         {
@@ -103,11 +109,12 @@ namespace Pharmacita.Controllers
         }
         public ActionResult Buy()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "اكتب رسالتك هنا";
 
             return View();
         }
         [HttpPost ]
+        [Authorize ]
         public ActionResult Buy(string Message)
         {
 

@@ -14,8 +14,9 @@ namespace Pharmacita.Controllers
 {
     public class DrugsController : Controller
     {
+        
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        [Authorize(Roles = "Admins")]
         // GET: Drugs
         public ActionResult Index()
         {
@@ -25,6 +26,7 @@ namespace Pharmacita.Controllers
       
 
         // GET: Drugs/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -40,6 +42,7 @@ namespace Pharmacita.Controllers
         }
 
         // GET: Drugs/Create
+        [Authorize ]
         public ActionResult Create()
         {
             ViewBag.categoryId = new SelectList(db.Categories, "Id", "CategoryName");
@@ -68,7 +71,7 @@ namespace Pharmacita.Controllers
             ViewBag.categoryId = new SelectList(db.Categories, "Id", "CategoryName", drug.categoryId);
             return View(drug);
         }
-
+        [Authorize]
         // GET: Drugs/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -88,6 +91,7 @@ namespace Pharmacita.Controllers
         // POST: Drugs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Drug drug, HttpPostedFileBase upload)
@@ -106,7 +110,7 @@ namespace Pharmacita.Controllers
             ViewBag.categoryId = new SelectList(db.Categories, "Id", "CategoryName", drug.categoryId);
             return View(drug);
         }
-
+        [Authorize(Roles = "Admins")]
         // GET: Drugs/Delete/5
         public ActionResult Delete(int? id)
         {

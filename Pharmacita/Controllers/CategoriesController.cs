@@ -11,6 +11,7 @@ using System.IO;
 
 namespace Pharmacita.Controllers
 {
+    [Authorize(Roles = "Admins")]
     public class CategoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
