@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Pharmacita.Models.Category>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "الصفحة الرئيسية";
 }
 
 <div class="jumbotron alert alert-info ">
@@ -17,12 +17,12 @@
             <div class="row panel-body ">
                 @foreach (var subitem in item.drugs)
                 {
-                    <div class="col-md-4  thumbnail" style="padding:15px;">
+                    <div class="col-md-4  thumbnail" style="padding-right :15px;">
                         <h1>@Html.DisplayFor(modelItem => subitem.DrugName)</h1>
                         <img class="thumbnail " style="width:250px;height:250px;" src="~/upload/@Html.DisplayFor(modelItem => subitem.DrugImage)" />
-                        <h2> @Html.DisplayFor(modelItem => subitem.DrugDescribtion)</h2>
-                        <h2>@Html.DisplayFor(modelItem => subitem.Off) الخصم</h2>
-                        <h2>@Html.DisplayFor(modelItem => subitem.Price) السعر بالمصري</h2>
+                        <h3> @Html.DisplayFor(modelItem => subitem.DrugDescribtion)</h3>
+                        <h3>%@Html.DisplayFor(modelItem => subitem.Off) الخصم</h3>
+                        <h3>@Html.DisplayFor(modelItem => subitem.Price) السعر بالمصري</h3>
 
                         @Html.ActionLink("للشراء و التفاصيل ", "Details", new { Id = subitem.Id }, new { @class = "btn btn-primary" })
                     </div>

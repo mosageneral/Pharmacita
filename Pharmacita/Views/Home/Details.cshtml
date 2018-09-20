@@ -1,83 +1,83 @@
 ﻿@model Pharmacita.Models.Drug
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "تفاصيل الدواء";
 }
 
-<h2>Details</h2>
+<h1>التفاصيل</h1>
 
 <div>
-    <h4>Drug</h4>
+   
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.category.CategoryName)
+        <dt style="font-size:large;">
+           النوع 
         </dt>
 
-        <dd>
+        <dd style="font-size:large;">
             @Html.DisplayFor(model => model.category.CategoryName)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DrugName)
+        <dt style="font-size:large;">
+          الإسم
         </dt>
 
-        <dd>
+        <dd style="font-size:large;">
             @Html.DisplayFor(model => model.DrugName)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DrugDescribtion)
+        <dt style="font-size:large;">
+           الوصف
         </dt>
 
-        <dd>
+        <dd style="font-size:large;">
             @Html.DisplayFor(model => model.DrugDescribtion)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
+        <dt style="font-size:large;">
+            الكمية
         </dt>
 
-        <dd>
+        <dd style="font-size:large;">
             @Html.DisplayFor(model => model.Quantity)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DrugImage)
+        <dt style="font-size:large;">
+            الصورة
         </dt>
 
-        <dd>
+        <dd style="font-size:large;">
             
-            <img class="thumbnail " src="~/upload/@Html.DisplayFor(model => model.DrugImage)" />
+            <img class="thumbnail "style="width:200px;height:200px;" src="~/upload/@Html.DisplayFor(model => model.DrugImage)" />
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Expire)
+        <dt style="font-size:large;">
+            تاريخ الانتهاء
         </dt>
 
-        <dd>
+        <dd style="font-size:large;">
             @Html.DisplayFor(model => model.Expire)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Off)
+        <dt style="font-size:large;">
+            الخصم
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Off)
+        <dd style="font-size:large;">
+           % @Html.DisplayFor(model => model.Off)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
+        <dt style="font-size:large;">
+            السعر بالمصري
         </dt>
 
-        <dd>
+        <dd style="font-size:large;">
             @Html.DisplayFor(model => model.Price)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Send Message", "Buy", new { id = Model.Id }) |
+    @Html.ActionLink("تواصل مع البائع", "Buy", new { id = Model.Id },new { @class = "btn btn-primary" })
   
 </p>

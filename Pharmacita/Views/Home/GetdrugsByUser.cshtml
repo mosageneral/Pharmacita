@@ -30,7 +30,8 @@
             @Html.DisplayFor(modelItem => item.drug.DrugName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.user.UserName)
+            
+            <a href="~/Account/MainProfile/@Html.DisplayFor(modelItem => item.drug .User .Id )">@Html.DisplayFor(modelItem => item.drug.User.UserName)</a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Message)

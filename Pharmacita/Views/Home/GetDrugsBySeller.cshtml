@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Pharmacita.Models.DrugViewModel >
 
 @{
-    ViewBag.Title = "GetDrugsBySeller";
+    ViewBag.Title = "الادوية المباعه من طرفك";
 }
 
 @foreach (var gr in Model)
@@ -17,7 +17,7 @@
         {
             <tr>
                 <td>
-                @item.user.UserName
+               <a href="~/Account/MainProfile/@item.user.Id">@item.user.UserName</a>
                 </td>
                 <td>
                     @item.Message

@@ -1,7 +1,7 @@
 ﻿
 
 @{
-    ViewBag.Title = "Buy";
+    ViewBag.Title = "شراء الدواء";
 }
 
 <h2>@ViewBag.Result</h2>
@@ -12,11 +12,12 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>BuyTheDrug</h4>
+        <h4>اشتري الدواء</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.Label("Message", htmlAttributes: new { @class = "control-label col-md-2" })
+            
+            <h4 class="control-label col-md-2">تواصل مع البائع </h4>
             <div class="col-md-10">
                 @Html.TextArea("Message", new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessage("Message", "", new { @class = "text-danger" })
@@ -31,15 +32,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="ارسال" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

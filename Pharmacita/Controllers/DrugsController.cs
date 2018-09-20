@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Pharmacita.Models;
 using System.IO;
 using Microsoft.AspNet.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pharmacita.Controllers
 {
@@ -62,6 +63,7 @@ namespace Pharmacita.Controllers
                 upload.SaveAs(path);
                 drug.DrugImage = upload.FileName;
                 drug.UserId = User.Identity.GetUserId();
+                
                 db.Drugs.Add(drug);
                 db.SaveChanges();
                 ViewBag.Ok = "تم تنفيذ طلبك";

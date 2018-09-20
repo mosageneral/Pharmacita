@@ -24,7 +24,11 @@ namespace Pharmacita
             var usermanger = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var user = new ApplicationUser();
             user.Email = "admin@Pharmacita.com";
-            user.UserName = "admin@Pharmacita.com";
+            user.UserName = "AdminPharmacita";
+            user.ProfilePic = "Admin1Admin1Admin1@@@.jpg";
+            user.Mobile = 1150338846;
+            user.Address = "Unkown";
+
             
           
             var check = usermanger.Create(user, "123456789Admin@");
@@ -38,8 +42,9 @@ namespace Pharmacita
             var usermanger = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var user = new ApplicationUser();
             user.Email = "Mangers1@Pharmacita.com";
-            user.UserName = "Mangers1@Pharmacita.com";
-          
+            user.UserName = "Manger1 Pharmacita";
+            user.ProfilePic = "Admin2Admin2Admin2@@@.jpg";
+
             var check = usermanger.Create(user, "123456789Mangers@");
             if (check.Succeeded)
             {
@@ -51,8 +56,9 @@ namespace Pharmacita
             var usermanger = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var user = new ApplicationUser();
             user.Email = "Mangers2@Pharmacita.com";
-            user.UserName = "Mangers2@Pharmacita.com";
-           
+            user.UserName = "Manger2 Pharmacita";
+            user.ProfilePic = "Admin3Admin3Admin3@@@.jpg";
+
             var check = usermanger.Create(user, "123456789Mangers@");
             if (check.Succeeded)
             {
@@ -64,8 +70,9 @@ namespace Pharmacita
             var usermanger = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var user = new ApplicationUser();
             user.Email = "Mangers3@Pharmacita.com";
-            user.UserName = "Mangers3@Pharmacita.com";
-            
+            user.UserName = "Manger3 Pharmacita";
+            user.ProfilePic = "Admin4Admin4Admin4@@@.jpg";
+
             var check = usermanger.Create(user, "123456789Mangers@");
             if (check.Succeeded)
             {

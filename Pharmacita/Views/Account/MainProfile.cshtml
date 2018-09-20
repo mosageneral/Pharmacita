@@ -2,10 +2,10 @@
 @using Pharmacita.Models
 @using Microsoft.AspNet.Identity
     @{
-        ViewBag.Title = "MainProfile";
+        ViewBag.Title = "البروفايل";
     }
 
-    <h2>MainProfile</h2>
+    <h2>Profile</h2>
 @{
     var user = User.Identity.GetUserId();
 }
@@ -23,12 +23,14 @@
                
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
-                <div class="profile-userbuttons">
-                   
-                    <button type="button" class="btn btn-success btn-sm">Message</button>
-                </div>
+              
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
+                @{ 
+                    if (user==Model.Id )
+                    {
+
+
                 <div class="profile-usermenu">
                     <ul class="nav">
                         
@@ -46,28 +48,33 @@
                                 اعرض دواء للبيع
                             </a>
                            
+                              <a>@Html.ActionLink("تغيير كلمة السر", "ChangePassword", "Manage")</a>  
+                           
+                           
                         </li>
                        
                        
                     </ul>
                 </div>
+                    }
+                }
                 <!-- END MENU -->
             </div>
         </div>
         <div class="col-md-9">
             <div class="profile-content">
                 <div class="profile-usertitle">
-                    <div class="profile-usertitle-name">
-                        @Html.DisplayFor(model => model.UserName)
+                    <div class="profile-usertitle-name" style="font-size:25px;">
+                        @Html.DisplayFor(model => model.UserName)  الإسم 
                     </div>
-                    <div class="profile-usertitle-name">
-                        0 @Html.DisplayFor(model => model.Mobile)
+                    <div class="profile-usertitle-name" style="font-size:25px;">
+                        0 @Html.DisplayFor(model => model.Mobile)    الموبايل
                     </div>
-                    <div class="profile-usertitle-name">
-                        @Html.DisplayFor(model => model.Address)
+                    <div class="profile-usertitle-name" style="font-size:25px;">
+                        @Html.DisplayFor(model => model.Address)     العنوان
                     </div>
-                    <div class="profile-usertitle-name">
-                        @Html.DisplayFor(model => model.Email)
+                    <div class="profile-usertitle-name" style="font-size:25px;">
+                        @Html.DisplayFor(model => model.Email)   الايميل
                     </div>
                     
                 <div>

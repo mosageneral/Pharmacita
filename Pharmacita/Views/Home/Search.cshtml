@@ -4,7 +4,7 @@
     ViewBag.Title = "Search";
 }
 
-<h2>Search</h2>
+
 
 <div panel panel-default>
    
@@ -12,14 +12,14 @@
         <div class="panel-body">
             @foreach (var subitem in Model)
             {
-                <div class="col-md-4">
-                    <h2>@Html.DisplayFor(modelItem => subitem.DrugName)</h2>
-                    <img class="thumbnail " src="~/upload/@Html.DisplayFor(modelItem =>subitem.DrugImage)" />
-                    <p>@Html.DisplayFor(modelItem => subitem.DrugDescribtion)</p>
-                    <p>@Html.DisplayFor(modelItem => subitem.Quantity)</p>
-                    <p>@Html.DisplayFor(modelItem => subitem.Expire)</p>
-                    <p>@Html.DisplayFor(modelItem => subitem.Off)</p>
-                    <p>@Html.DisplayFor(modelItem => subitem.Price)</p>
+                <div class="col-md-4 thumbnail" >
+                    <h2 style="font-size:25px;">@Html.DisplayFor(modelItem => subitem.DrugName) الاسم</h2>
+                    <img class="thumbnail " src="~/upload/@Html.DisplayFor(modelItem =>subitem.DrugImage)"  />
+                    <p style="font-size:25px;">@Html.DisplayFor(modelItem => subitem.DrugDescribtion) الوصف</p>
+                    <p style="font-size:25px;">@Html.DisplayFor(modelItem => subitem.Quantity) الكميه</p>
+                    <p style="font-size:25px;">@Html.DisplayFor(modelItem => subitem.Expire) تاريخ الانتهاء</p>
+                    <p style="font-size:25px;">% @Html.DisplayFor(modelItem => subitem.Off) الخصم</p>
+                    <p style="font-size:25px;">@Html.DisplayFor(modelItem => subitem.Price) السعر بالمصري</p>
 
                     @Html.ActionLink("اشتري ", "Details", new { Id = subitem.Id }, new { @class = "btn btn-primary" })
                 </div>
