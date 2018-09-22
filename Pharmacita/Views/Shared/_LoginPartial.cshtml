@@ -16,6 +16,9 @@
             <a class="nav-link">Hello   @User.Identity.GetUserName() !</a>
         </li>
         <li >@Html.ActionLink("Your Profile ", "MainProfile", "Account", new { Id = user }, new { @class = "nav-link" })</li>
+        <li>
+            <a class="nav-link" href="~/Drugs/Create">بيع دواء</a>
+        </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
     }

@@ -29,7 +29,8 @@
             @Html.DisplayFor(modelItem => item.CategoryName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CategoryIcon)
+            <img style="width:100px;height:100px;" class="thumbnail" src="~/upload/ @Html.DisplayFor(modelItem => item.CategoryIcon)"/>
+           
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CategoryContent)

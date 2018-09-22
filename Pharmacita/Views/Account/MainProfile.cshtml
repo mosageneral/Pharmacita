@@ -7,7 +7,12 @@
 
     <h2>Profile</h2>
 @{
+    var db = new ApplicationDbContext();
     var user = User.Identity.GetUserId();
+   
+
+
+
 }
 <br />
 <div class="container">
@@ -26,10 +31,10 @@
               
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
-                @{ 
-                    if (user==Model.Id )
+                @{
+                    if (user == Model.Id)
                     {
-
+                       
 
                 <div class="profile-usermenu">
                     <ul class="nav">
@@ -42,10 +47,6 @@
                             <a href="~/Home/GetDrugsByUser">
                                 <i class="glyphicon glyphicon-user"></i>
                                 طلبات الشراء المقدمة من طرفك
-                            </a>
-                            <a href="~/Drugs/Create">
-                                <i class="glyphicon glyphicon-user"></i>
-                                اعرض دواء للبيع
                             </a>
                            
                               <a>@Html.ActionLink("تغيير كلمة السر", "ChangePassword", "Manage")</a>  
@@ -83,6 +84,7 @@
                 </div>
             </div>
         </div>
+       
     </div>
 </div>
 
