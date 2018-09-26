@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\DrugFindsController.cs" />
     <Compile Include="Controllers\DrugsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -244,10 +245,15 @@
     <Compile Include="Migrations\201809180837075_UserName.Designer.cs">
       <DependentUpon>201809180837075_UserName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809251459073_Find.cs" />
+    <Compile Include="Migrations\201809251459073_Find.Designer.cs">
+      <DependentUpon>201809251459073_Find.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BuyTheDrug.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\DrugFind.cs" />
     <Compile Include="Models\Drug.cs" />
     <Compile Include="Models\DrugViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -257,8 +263,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\a.jpeg" />
+    <Content Include="Content\b.jpeg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\c.jpeg" />
+    <Content Include="Content\Slider.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -341,6 +351,11 @@
     <Content Include="Views\Home\GetDrugsBySeller.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Account\EditMainProfile.cshtml" />
+    <Content Include="Views\DrugFinds\Create.cshtml" />
+    <Content Include="Views\DrugFinds\Delete.cshtml" />
+    <Content Include="Views\DrugFinds\Details.cshtml" />
+    <Content Include="Views\DrugFinds\Edit.cshtml" />
+    <Content Include="Views\DrugFinds\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -384,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809180837075_UserName.resx">
       <DependentUpon>201809180837075_UserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251459073_Find.resx">
+      <DependentUpon>201809251459073_Find.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

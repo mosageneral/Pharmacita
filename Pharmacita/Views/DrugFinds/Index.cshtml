@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Pharmacita.Models.DrugFind>
+@using Pharmacita.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>قائمة الادوية المطلوبة</h2>
+
+<p>
+    
+<p><a href="~/DrugFinds/Create" class="btn btn-primary btn-lg">أطلب دواء &raquo;</a></p>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            أسم الدواء
+        </th>
+        <th>
+            وصف الدواء
+        </th>
+        <th>
+            الكمية المطلوبة
+
+        </th>
+        <th>
+            بروفايل الباحث عن الدواء
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrugName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrugDescribtion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+
+        </td>
+        <td>
+          
+            @{
+                var userr = Html.DisplayFor(modelItem => item.UserId).ToString ();
+                var db = new ApplicationDbContext();
+                var user = db.Users.Find(userr);
+                user.UserName.ToString();
+            }
+            <a href="~/Account/MainProfile/@item.UserId">@user.UserName.ToString()</a>
+            
+        </td>
+        
+    </tr>
+}
+
+</table>
