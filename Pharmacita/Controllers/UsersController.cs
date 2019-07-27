@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Pharmacita.Controllers
 {
+    [Authorize(Roles = "Admins")]
     public class UsersController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();

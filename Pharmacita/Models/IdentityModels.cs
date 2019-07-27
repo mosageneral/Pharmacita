@@ -55,6 +55,8 @@ namespace Pharmacita.Models
 
         public System.Data.Entity.DbSet<Pharmacita.Models.DrugFind> DrugFinds { get; set; }
 
-       
+        public System.Data.Entity.DbSet<Pharmacita.Models.NewsCategories> NewsCategories { get; set; }
+
+        public System.Data.Entity.DbSet<Pharmacita.Models.News> News { get; set; }
     }
 }

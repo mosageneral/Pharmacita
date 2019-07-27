@@ -196,14 +196,18 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CPController.cs" />
+    <Compile Include="Controllers\NewsCategoriesController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Areas\CP\CPAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DrugFindsController.cs" />
     <Compile Include="Controllers\DrugsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,6 +255,10 @@
     <Compile Include="Migrations\201809251459073_Find.Designer.cs">
       <DependentUpon>201809251459073_Find.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907271436075_News.cs" />
+    <Compile Include="Migrations\201907271436075_News.Designer.cs">
+      <DependentUpon>201907271436075_News.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BuyTheDrug.cs" />
@@ -260,6 +268,8 @@
     <Compile Include="Models\DrugViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\NewsCategories.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -282,6 +292,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\CP\Views\web.config" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
     <None Include="Properties\PublishProfiles\ftb.pubxml" />
     <None Include="Properties\PublishProfiles\Web.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -332,11 +350,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\MainProfile.cshtml" />
-    <Content Include="Views\Categories\Create.cshtml" />
-    <Content Include="Views\Categories\Delete.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
-    <Content Include="Views\Categories\Edit.cshtml" />
-    <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Drugs\Create.cshtml" />
     <Content Include="Views\Drugs\Delete.cshtml" />
     <Content Include="Views\Drugs\Details.cshtml" />
@@ -358,11 +371,23 @@
     <Content Include="Views\DrugFinds\Details.cshtml" />
     <Content Include="Views\DrugFinds\Edit.cshtml" />
     <Content Include="Views\DrugFinds\Index.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\CP\Index.cshtml" />
+    <Content Include="Views\NewsCategories\Create.cshtml" />
+    <Content Include="Views\NewsCategories\Delete.cshtml" />
+    <Content Include="Views\NewsCategories\Details.cshtml" />
+    <Content Include="Views\NewsCategories\Edit.cshtml" />
+    <Content Include="Views\NewsCategories\Index.cshtml" />
+    <Content Include="Views\News\Create.cshtml" />
+    <Content Include="Views\News\Delete.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\CP\Controllers\" />
+    <Folder Include="Areas\CP\Models\" />
+    <Folder Include="Controllers\Shared\" />
     <Folder Include="upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -406,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809251459073_Find.resx">
       <DependentUpon>201809251459073_Find.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907271436075_News.resx">
+      <DependentUpon>201907271436075_News.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
