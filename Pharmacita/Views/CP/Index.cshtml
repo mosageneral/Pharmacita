@@ -7,8 +7,12 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Pharmacita</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
     <div class="">
@@ -17,14 +21,12 @@
         </a>
     </div>
     <div class="">
-        <a class="btn btn-primary" href="~/Views/Categories/Index.cshtml">
+        <a class="btn btn-primary" href="~/Categories">
             Categories
         </a>
     </div>
-    <div class="">
-        <a class="btn btn-primary" href="~/Controllers/UsersController.cs">
-            News
-        </a>
-    </div>
+    
 </body>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 </html>
