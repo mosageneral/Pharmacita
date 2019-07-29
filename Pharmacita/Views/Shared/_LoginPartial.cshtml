@@ -1,29 +1,35 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
+
+
+   
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
-
-        
-           var user = User.Identity.GetUserId ();
-           
-        
+        @Html.AntiForgeryToken()
 
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            <a class="nav-link">Hello   @User.Identity.GetUserName() !</a>
-        </li>
-        <li >@Html.ActionLink("Your Profile ", "MainProfile", "Account", new { Id = user }, new { @class = "nav-link" })</li>
-        <li>
-            <a class="nav-link" href="~/Drugs/Create">بيع دواء</a>
-        </li>
-        <li>
-            <a class="nav-link" href="~/Drugfinds/Index">الادوية المطلوبة </a>
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        var user = User.Identity.GetUserId();
+
+
+<link href = "~/css/bootstrap.min.css" rel = "stylesheet" />
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    حسابك
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item">Hello   @User.Identity.GetUserName() !</a><br />
+                    @Html.ActionLink("Your Profile ", "MainProfile", "Account", new { Id = user }, new { @class = "dropdown-item" })<br />
+                    <a class="" href="~/Drugfinds/Index">الادوية المطلوبة </a><br />
+                    <a class="dropdown-item" href="~/Drugs/Create">بيع دواء</a><br />
+                    <div class="dropdown-divider"></div><br />
+                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                </div>
+            </li>
+
+        </ul>
     }
 }
 else
